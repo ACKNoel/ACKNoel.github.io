@@ -5,8 +5,87 @@
 		<title>Trouve le Père Noël</title>
 		<link rel="stylesheet" href="css/stylesheet.css">	
         <script src="js/scriptcode.js"></script>
+        <style>
+            .popup-overlay {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            }
+
+            .popup-content {
+            background-color: #f304048e;
+            margin: auto; /* Center the content */
+            padding: 20px;
+            border: 1px solid #f50505;
+            width: 80%; /* Adjust as needed */
+            max-width: 500px; /* Max width for better display */
+            border-radius: 8px;
+            text-align: center;
+            }
+
+        </style>
     </head>
 	<body>
-        <button type="button" onclick=<a target="_blank" href="index.html"></a>><img src="image/retourindeximage.png" alt="Boutton refresh"/></button>
+        <table>
+			<tr>
+				<td>
+                    <p><b>Score:</b> code angéline
+                    <br>nom utilisateur code
+                    </p>
+                </td>
+                <td><p>BNENTNRTNRTNRT</p></td>
+			</tr>
+		</table>
+            <p>
+                score: 
+                <br>nom utilisateur:
+            </p>
+            <a target="_blank" href="index.html">
+                <button type="button" style="border: none; float: right"><img src="image/retourindeximage.png" width="25px; height: 25px;" alt="Boutton refresh"/></button>
+            </a>
+
+            <!-- CODE DE POPUP GÉNÉRÉ PAR GOOGLE AI - Mots clé : how to make a simple html popup button in html -->
+            <button id="ouvrirPopupBtn" style="border: none; float: right"><img src="image/aide.jpg" width="25px; height: 25px;" alt="Boutton refresh"/></button>
+            <div id="popupAide" class="popup-overlay">
+                <div class="popup-content">
+                    <h2>Trouve le Père Noël</h2>
+                    <p><b>Objectif: </b> 
+                        <br>Votre objectif est de trouver le pays dans lequel le Père Noël se cache. À l'aide des indices fournies vous devez soumettre votre meilleure indice. 
+                        <br>Vous devez compléter le plus de rondes possibles avant que le temps s'écoule. 
+                        <br><br>*Vos points seront accordés selon le nombre d'indices requis*
+                    </p>
+                    <p><b>Pointage: </b>
+                        <br>1 indice: 100 pts
+                        <br>2 indices: 80 pts
+                        <br>3 indices: 60 pts
+                        <br>4 indices: 40 pts
+                        <br>5 indices: 20 pts
+                        <br>Réponse incorrecte: 0 pts
+                    </p>
+                    <button id="fermerPopupBtn" style="background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">Fermer</button>
+                </div>
+            </div>
+        <script>
+            const ouvrirPopupBtn = document.getElementById('ouvrirPopupBtn');
+            const fermerPopupBtn = document.getElementById('fermerPopupBtn');
+            const popupAide = document.getElementById('popupAide');
+
+           ouvrirPopupBtn.onclick = function() {
+                popupAide.style.display = 'flex'; // Flex permet de mettre le popoup au centre de la page
+            }
+
+            fermerPopupBtn.onclick = function() {
+                popupAide.style.display = 'none'; // Cacher le popup
+            }
+        </script>
     </body>
 <html>
+
