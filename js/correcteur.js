@@ -1,7 +1,9 @@
+//DÉCLARATION DES VARIABLES:
 let pays = 0;
 let indice = 0;
 let score = 0;
 
+//tableau qui contient les pays possibles
 let tblPays = [
     "Canada",
     "France",
@@ -12,6 +14,7 @@ let tblPays = [
     "Thailande"
 ];
 
+//tableau à 2 dimensions avec toutes les indices dans le même ordre que les pays
 let tblIndices = [
     ["indice canada 1", "indice canada 2", "indice canada 3", "indice canada 4", "indice canada 5"]
     ["indice france 1", "indice france 2", "indice france 3", "indice france 4", "indice france 5"]
@@ -22,26 +25,38 @@ let tblIndices = [
     ["indice thailande 1", "indice thailande 2", "indice thailande 3", "indice thailande 4", "indice thailande 5"]
 ];
 
-//Source Math.random https://www.w3schools.com/js/js_random.asp
+//CODE PRINCIPAL:
+pigePays();
+
+//FONCTIONS:
+
+//Source: https://www.w3schools.com/js/js_random.asp
+//fonction qui choisit un pays selon l'index du tableau de pays 
 function pigePays() {
     pays = Math.floor(Math.random() * (tblPays.length))
-    return pays;
 }
 
+//fonction qui prend une réponse de l'utilisateur et vérifie s'il est correct
+//si la réponse est correct, on donne un montant de points selon le nombre d'indices utilisés
+//si la réponse est incorrect, on va à la prochaine indice
 function correcteur() {
+    //déclaration des variables
     let message;
     let boiteAffiche = document.getElementById("divAffiche");
     let reponse = document.getElementById("reponse").value;
 
+    //si la réponse est correct, on ajoute au score et recommence le jeu
     if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
         score = score + (100 - indice*20);
         message = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
         indice = 0;
     }
+    //si la réponse est incorrect, on va au prochain indice en utilisant le tableau d'indices
     else {
         indice++;
-        message = "Incorrect. Voici le prochain indice:<br>" + tblIndices[indice];
+        message = "Incorrect. Voici le prochain indice:<br>" + tblIndices[pays][indice];
     }
 
+    //affiche le message défini auparavant
     boiteAffiche.innerHTML = message;
 }
