@@ -1,5 +1,5 @@
 //DÉCLARATION DES VARIABLES:
-let pays = 0;
+let pays = Math.floor(Math.random() * (tblPays.length));
 let indice = 0;
 let score = 0;
 
@@ -25,15 +25,12 @@ let tblIndices = [
     ["indice thailande 1", "indice thailande 2", "indice thailande 3", "indice thailande 4", "indice thailande 5"]
 ];
 
-//CODE PRINCIPAL:
-pigePays();
-
 //FONCTIONS:
 
 //Source: https://www.w3schools.com/js/js_random.asp
 //fonction qui choisit un pays selon l'index du tableau de pays 
 function pigePays() {
-    pays = Math.floor(Math.random() * (tblPays.length))
+    pays = Math.floor(Math.random() * (tblPays.length));
 }
 
 //fonction qui prend une réponse de l'utilisateur et vérifie s'il est correct
