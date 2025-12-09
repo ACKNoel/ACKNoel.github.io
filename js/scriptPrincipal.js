@@ -2,6 +2,7 @@
 let pays = Math.floor(Math.random() * (tblPays.length));
 let indice = 0;
 let score = 0;
+let nom;
 
 //tableau qui contient les pays possibles
 let tblPays = [
@@ -25,7 +26,24 @@ let tblIndices = [
     ["indice thailande 1", "indice thailande 2", "indice thailande 3", "indice thailande 4", "indice thailande 5"]
 ];
 
+//CODE PRINCIPAL:
+
+//Source: https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
+
+if (document.URL.includes("trouveperenoel")) {
+    let boiteNomUtilisateur = document.getElementById("boiteNom");
+    let messageNom = nom;
+
+    boiteNomUtilisateur.innerHTML = messageNom;
+}
+
 //FONCTIONS:
+
+function chercheNomUtilisateur() {
+    let entreeNom = document.getElementById("nomUtilisateur").value;
+
+    nom = entreeNom;
+}
 
 //Source: https://www.w3schools.com/js/js_random.asp
 //fonction qui choisit un pays selon l'index du tableau de pays 
