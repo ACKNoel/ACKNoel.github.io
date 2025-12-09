@@ -48,6 +48,13 @@ if (document.URL.includes("trouveperenoel")) {
     boiteNomUtilisateur.innerHTML = messageNom;
 }
 
+if (document.URL.includes("scorefinal")) {
+    let boiteScoreFinal = document.getElementById("boiteScoreFinal");
+    let messageScoreFinal = "Score: " + score;
+
+    boiteScoreFinal.innerHTML = messageScoreFinal;
+}
+
 //FONCTIONS:
 
 //fonction qui cherche le nom d'utilisateur inscrit
