@@ -5,16 +5,18 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Où est le père Noël ?</title>
+		<title>Trouve le père Noël ?</title>
         <link rel="stylesheet" href="css/stylesheet.css">
 	</head>
 	<!--source de l'image: https://www.vecteezy.com/vector-art/9432551-night-sky-with-full-moon-and-clouds-->
 	<body style = "background-image: url('image/nuage.jpg'); ">
 			<img src="image/Titre2.png" width="75%"/></centre>
-		<form style="border: solid white">
+		<form>
 			<label for="nomUtilisateur" id="text">nom d'utilisateur</label>
 			<input type="text" id="nomUtilisateur" class="textBox"/>
+			<input type="button" id="btnCommence" onclick="location.href = 'trouveperenoel.html'; chercheNomUtilisateur()" value="Trouver" class="button">
 		</form>
+		<script src="js/scriptPrincipal.js"></script>
 	</body>
 	
 </html>

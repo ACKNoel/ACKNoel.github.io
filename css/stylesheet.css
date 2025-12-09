@@ -33,6 +33,23 @@ body {
     top: 45%;
     position: absolute;
 }
+
+.button {
+    border:3px solid rgb(129, 0, 0); 
+    background-color: rgb(216, 6, 6);
+    border-radius:8px; 
+    width: 25%; 
+    font-size: 10pt; 
+    text-align: center;
+    margin: auto;
+    margin-left: 37.5%;
+    top: 50%;
+    position: absolute;
+}
+.button:hover {
+  background-color: rgb(129, 0, 0);
+  color: rgb(2, 2, 2);
+}
 /*
 #overlap_a {
   width: 100%;
@@ -86,9 +103,3 @@ body {
   width: 100%;
   height: 100%;
 }*/
-
-#example1 {
-  background: url(mountain.jpg);
-  background-repeat: no-repeat;
-  background-size: auto;
-}
