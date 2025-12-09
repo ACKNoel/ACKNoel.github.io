@@ -1,3 +1,55 @@
 body {
-    background-image: url("image/nuage.jpg"); 
+    background-image: url('image/nuage.jpg');
+    img {
+        display: block;
+        margin: auto;
+        width: 50%;
+    }
+}
+
+#text {
+  text-align: center;
+  text-transform: lowercase;
+  color: #ffffff;
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  font-size: 20px;
+}
+
+.textBox {
+    border:solid 1px black; 
+    border-radius:8px; 
+    width: 25%; 
+    font-size:10pt; 
+    text-align: center;
+    margin: 0 auto;
+  margin-left: 37.5%;
+  margin-right: 50%;
+}
+.popup-overlay {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(245, 5, 5); /* Black w/ opacity */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.popup-content {
+  background-color: #fa000000;
+  margin: auto; /* Center the content */
+  padding: 20px;
+  border: 1px solid #67fd0300;
+  width: 10%; /* Adjust as needed */
+  max-width: 500px; /* Max width for better display */
+  border-radius: 1px;
+  text-align: center;
 }
