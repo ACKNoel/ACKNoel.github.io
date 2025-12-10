@@ -36,53 +36,6 @@ body {
     margin-right: 50%;
 }
 
-/* Source de référence du popup: https://www.w3schools.com/howto/howto_js_popup.asp à voir aussi google AI */
-.popup-overlay {
-  display: none; /* Cache le popup par default */
-  position: fixed; /* Reste en place */
-  z-index: 1; /* Met en haut de la page */
-  left: 0;
-  top: 0;
-  width: 100%; /* width complet*/
-  height: 100%; /* hauteur complet */
-  overflow: auto; /* Permet un scroll au besoin */
-  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
-  justify-content: center; /* Centrer horizontalement */
-  align-items: center; /* Centrer verticalement */
-}
-
-.popup-contenu {
-  background-color: #07a702;
-  margin: auto; /* Centre le contenu du popoup */
-  padding: 20px;
-  border: 1px solid #f50505;
-  width: 80%; /* Ajust la grandeur du popup et du contenu */
-  max-width: 500px; /* met une grandeur maximale */
-  border-radius: 8px;
-  text-align: center;
-}
-
-.joli {
-  width: 100%;
-  border: 3px solid hsl(0, 45%, 48%);
-  background-color: #0f7e0b;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-  border-radius: 8px;
-  /* Garantit que le remplissage et la bordure sont inclus dans la largeur et l'hauteur définie */
-}
-
-table {
-  border-collapse: collapse;
-  border: 1px solid rgba(128, 128, 128, 0);
-  width: 90%;
-  float: center;
-  margin: 0 auto;
-}
 
 .button {
   border:3px solid rgb(129, 0, 0); 
