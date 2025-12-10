@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
 		<title>Trouve le Père Noël</title>
 		<link rel="stylesheet" href="css/stylesheet.css">	
-        <script src="js/scriptcode.js"></script>
         <style>
             .popup-overlay {
             display: none; /* Hidden by default */
@@ -21,7 +20,7 @@
             }
 
             .popup-content {
-            background-color: #f304048e;
+            background-color: #f30404;
             margin: auto; /* Center the content */
             padding: 20px;
             border: 1px solid #f50505;
@@ -30,49 +29,101 @@
             border-radius: 8px;
             text-align: center;
             }
+            body {
+            background-color: #92ce8c;
+            margin-left: 0;
+            margin-right: 0;
+            }
 
+            .joli {
+            width: 100%;
+            border: 3px solid hsl(0, 45%, 48%);
+            background-color: #0f7e0b;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            border-radius: 8px;
+            /* Garantit que le remplissage et la bordure sont inclus dans la largeur et l'hauteur définie */
+            }
+            table {
+            border-collapse: collapse;
+            border: 1px solid rgba(128, 128, 128, 0);
+            width: calc(100% - 10px);
+            float: left;
+            margin-left: 10 auto;
+            margin-right: 10 auto;
+            }
+            form {
+            display: inline-block;
+            width: 100%; 
+            margin-left: 5000 px;
+            text-align: center;
+            }
         </style>
     </head>
 	<body>
-        <table>
-			<tr>
-				<td>
-                    <p><b>Score:</b> code angéline
-                    <br>nom utilisateur code
-                    </p>
-                </td>
-                <td><p>BNENTNRTNRTNRT</p></td>
-			</tr>
-		</table>
-            <p>
-                score: 
-                <br>nom utilisateur:
-            </p>
-            <a target="_blank" href="index.html">
-                <button type="button" style="border: none; float: right"><img src="image/retourindeximage.png" width="25px; height: 25px;" alt="Boutton refresh"/></button>
-            </a>
-
-            <!-- CODE DE POPUP GÉNÉRÉ PAR GOOGLE AI - Mots clé : how to make a simple html popup button in html -->
-            <button id="ouvrirPopupBtn" style="border: none; float: right"><img src="image/aide.jpg" width="25px; height: 25px;" alt="Boutton refresh"/></button>
-            <div id="popupAide" class="popup-overlay">
-                <div class="popup-content">
-                    <h2>Trouve le Père Noël</h2>
-                    <p><b>Objectif: </b> 
-                        <br>Votre objectif est de trouver le pays dans lequel le Père Noël se cache. À l'aide des indices fournies vous devez soumettre votre meilleure indice. 
-                        <br>Vous devez compléter le plus de rondes possibles avant que le temps s'écoule. 
-                        <br><br>*Vos points seront accordés selon le nombre d'indices requis*
-                    </p>
-                    <p><b>Pointage: </b>
-                        <br>1 indice: 100 pts
-                        <br>2 indices: 80 pts
-                        <br>3 indices: 60 pts
-                        <br>4 indices: 40 pts
-                        <br>5 indices: 20 pts
-                        <br>Réponse incorrecte: 0 pts
-                    </p>
-                    <button id="fermerPopupBtn" style="background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">Fermer</button>
+        <header>
+            <table>
+                <tr>
+                    <td>
+                        <p><b>Score:</b> code angéline
+                        <br>nom utilisateur code
+                        </p>
+                    </td>
+                    <td> 
+                        <a href="index.html">
+                            <button type="button" style="border: none; float: right; display: flex; max-height: 20%; max-width: 20%; background-color: #4caf4f00; width: 15%"><img src="image/retourindeximage.png" alt="Boutton refresh"/></button>
+                        </a>
+                        <button id="ouvrirPopupBtn" style="border: none; float: right; display: flex; max-height: 20%; max-width: 20%; background-color: #4caf4f00; width: 15%"><img src="image/aidebg.png" alt="Boutton refresh"/></button>
+                        <div id="popupAide" class="popup-overlay">
+                            <div class="popup-content">
+                                <h2>Trouve le Père Noël</h2>
+                                <p><b>Objectif: </b> 
+                                    <br>Votre objectif est de trouver le pays dans lequel le Père Noël se cache. À l'aide des indices fournies vous devez soumettre votre meilleure indice. 
+                                    <br>Vous devez compléter le plus de rondes possibles avant que le temps s'écoule. 
+                                    <br><br>*Vos points seront accordés selon le nombre d'indices requis*
+                                </p>
+                                <p><b>Pointage: </b>
+                                    <br>1 indice: 100 pts
+                                    <br>2 indices: 80 pts
+                                    <br>3 indices: 60 pts
+                                    <br>4 indices: 40 pts
+                                    <br>5 indices: 20 pts
+                                    <br>Réponse incorrecte: 0 pts
+                                </p>
+                                <button id="fermerPopupBtn" style="border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">Fermer</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </header>
+            <br>
+            <br>
+            <br>
+            <br>
+            <form>
+                <!-- Indice -->
+                <div class="joli" id="divIndice" style="width: 80%;">
+                    <p></p>
                 </div>
-            </div>
+                <br>
+            <br>
+            <br>
+            <br>
+                <!-- textbox pour la réponse soumise -->
+                <label for="txtReponse">Réponse:</label>
+                <input type="text" id="txtReponse" style="border-radius: 8px;">
+                <!-- bouton pour soumettre la réponse -->
+                <input type="button" id="btnSoumet" onclick="confirmeReponse()"  value="Vérifier" style="border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">
+                <br><br>
+                <!-- Création d'une section pour l'affichage des résultats -->
+                <div id="divAffiche">
+                </div>
+            </form>   
         <script>
             const ouvrirPopupBtn = document.getElementById('ouvrirPopupBtn');
             const fermerPopupBtn = document.getElementById('fermerPopupBtn');
@@ -86,6 +137,7 @@
                 popupAide.style.display = 'none'; // Cacher le popup
             }
         </script>
+        <script src="js/scriptPrincipal.js"></script>
     </body>
 <html>
 
