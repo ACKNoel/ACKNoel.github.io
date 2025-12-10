@@ -84,11 +84,6 @@ table {
   margin: 0 auto;
 }
 
-form {
-  width: 100%; 
-  text-align: center;
-}
-
 .button {
   border:3px solid rgb(129, 0, 0); 
   background-color: rgb(216, 6, 6);
