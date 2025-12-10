@@ -28,32 +28,26 @@ let indice = 0;
 let score = 0;
 let nom = localStorage.getItem("nomUtilisateur");
 
+localStorage.setItem("score", 0);
+
 //CODE PRINCIPAL:
 
 //Source: https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
 //met le nom d'utilisateur sur la page si c'est la page principal
-if (document.URL.includes("trouveperenoel")) {
-    let boiteNomUtilisateur = document.getElementById("boiteNom");
-    let messageNom;
 
-    //s'il n'y a pas de nom d'utilisateur, ??? devient le nom
-    if (nom == undefined) {
-        messageNom = "???";
-    }
-    else {
-        messageNom = nom;
-    }
+let boiteNomUtilisateur = document.getElementById("boiteNom");
+let messageNom;
 
-    //affiche le nom d'utilisateur sur la page
-    boiteNomUtilisateur.innerHTML = messageNom;
+//s'il n'y a pas de nom d'utilisateur, ??? devient le nom
+if (nom == undefined) {
+    messageNom = "???";
 }
-
-if (document.URL.includes("scorefinal")) {
-    let boiteScoreFinal = document.getElementById("boiteScoreFinal");
-    let messageScoreFinal = "Score: " + score;
-
-    boiteScoreFinal.innerHTML = messageScoreFinal;
+else {
+    messageNom = nom;
+   
 }
+//affiche le nom d'utilisateur sur la page
+boiteNomUtilisateur.innerHTML = messageNom;
 
 //FONCTIONS:
 
@@ -75,6 +69,8 @@ function correcteur() {
     //si la réponse est correct, on ajoute au score et recommence le jeu
     if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
         score = score + (100 - indice*20);
+        localStorage.setItem("score", score);
+
         message = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
         indice = 0;
     }
