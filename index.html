@@ -10,12 +10,29 @@
 	</head>
 	<!--source de l'image: https://www.vecteezy.com/vector-art/9432551-night-sky-with-full-moon-and-clouds-->
 	<body style = "background-image: url('image/nuage.jpg'); ">
+		<style>
+			body {
+				/*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
+				background-image: url('image/nuage.jpg');
+				background-repeat: no-repeat; /* previent image de se répéter */
+				background-size: cover; /* Change la taille de l'image pour qu'il couvre tout l'écran sans distortion*/
+				background-position: center; /*Centre l'image dans l'arrière plan*/
+
+				img {
+					margin: auto;
+					width: 50%;
+					margin-left: 25%;
+					top: 20%;
+					position: absolute;
+    			}
+			}
+		</style>
 			<img src="image/Titre2.png" width="75%"/></centre>
 		<form>
-			<label for="nomUtilisateur" id="text">nom d'utilisateur</label>
+			<label for="nomUtilisateur" id="text">Nom d'utilisateur</label>
 			<input type="text" id="nomUtilisateur" class="textBox"/>
 			<input type="button" id="btnCommence" onclick="location.href = 'trouveperenoel.html'; chercheNomUtilisateur()" value="Trouver" class="button">
 		</form>
-		<script src="js/scriptPrincipal.js"></script>
+		<script src="js/chercheurNom.js"></script>
 	</body>
 </html>
