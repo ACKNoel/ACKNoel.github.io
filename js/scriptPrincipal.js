@@ -26,7 +26,7 @@ let tblIndices = [
 let pays = Math.floor(Math.random() * (tblPays.length));
 let indice = 0;
 let score = 0;
-let nom;
+let nom = localStorage.getItem("nomUtilisateur");
 
 //CODE PRINCIPAL:
 
@@ -56,13 +56,6 @@ if (document.URL.includes("scorefinal")) {
 }
 
 //FONCTIONS:
-
-//fonction qui cherche le nom d'utilisateur inscrit
-function chercheNomUtilisateur() {
-    let entreeNom = document.getElementById("nomUtilisateur").value;
-
-    nom = entreeNom;
-}
 
 //Source: https://www.w3schools.com/js/js_random.asp
 //fonction qui choisit un pays selon l'index du tableau de pays 
