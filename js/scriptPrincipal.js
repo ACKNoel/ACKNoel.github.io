@@ -36,6 +36,7 @@ localStorage.setItem("score", 0);
 //met le nom d'utilisateur sur la page si c'est la page principal
 
 let boiteNomUtilisateur = document.getElementById("boiteNom");
+let boiteScore = document.getElementById("boiteScore");
 let messageNom;
 
 //s'il n'y a pas de nom d'utilisateur, ??? devient le nom
@@ -48,6 +49,7 @@ else {
 }
 //affiche le nom d'utilisateur sur la page
 boiteNomUtilisateur.innerHTML = messageNom;
+boiteScore.innerHTML = score;
 
 //FONCTIONS:
 
@@ -69,6 +71,7 @@ function correcteur() {
     //si la réponse est correct, on ajoute au score et recommence le jeu
     if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
         score = score + (100 - indice*20);
+        boiteScore.innerHTML = score;
         localStorage.setItem("score", score);
 
         message = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
