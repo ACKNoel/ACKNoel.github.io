@@ -2,7 +2,7 @@
 
 let score = localStorage.getItem("score");
 let boiteScoreFinal = document.getElementById("boiteScoreFinal");
-let messageScoreFinal = "Score: " + score;
+let messageScoreFinal = "<p>Score: " + score + "</p>";
 
 //CODE PRINCIPAL:
 
