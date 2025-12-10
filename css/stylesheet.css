@@ -1,23 +1,7 @@
-body {
-/*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
-    background-image: url('image/nuage.jpg');
-    background-repeat: no-repeat; /* previent image de se répéter */
-    background-size: cover; /* Change la taille de l'image pour qu'il couvre tout l'écran sans distortion*/
-    background-position: center; /*Centre l'image dans l'arrière plan*/
-
-    img {
-        margin: auto;
-        width: 50%;
-        margin-left: 25%;
-        top: 20%;
-        position: absolute;
-    }
-}
-
 #text {
   text-align: center;
-  text-transform: lowercase;
   color: #ffffff;
+  display: block;
   margin: auto;
   position: absolute;
   top: 40%;
@@ -31,11 +15,13 @@ body {
     width: 25%; 
     font-size: 10pt; 
     text-align: center;
-    margin: 0 auto;
+    margin: auto;
     margin-left: 37.5%;
-    margin-right: 50%;
+    top: 45%;
+    position: absolute;
 }
 
+<<<<<<< HEAD
 
 .button {
   border:3px solid rgb(129, 0, 0); 
@@ -43,13 +29,72 @@ body {
   border-radius:8px; 
   width: 25%; 
   font-size: 10pt; 
-  text-align: center;
-  margin: auto;
-  margin-left: 37.5%;
-  top: 50%;
-  position: absolute;
+=======
+.button {
+    border:3px solid rgb(129, 0, 0); 
+    background-color: rgb(216, 6, 6);
+    border-radius:8px; 
+    width: 20%; 
+    font-size: 10pt; 
+    text-align: center;
+    margin: auto;
+    margin-left: 40%;
+    top: 53%;
+    position: absolute;
 }
 .button:hover {
   background-color: rgb(129, 0, 0);
   color: rgb(2, 2, 2);
+}
+
+/* Source de référence du popup: https://www.w3schools.com/howto/howto_js_popup.asp à voir aussi google AI*/
+.popup-overlay {
+  display: none; /* Cache le popup par default*/
+  position: fixed; /* Reste en place */
+  z-index: 1; /* Met en haut de la page */
+  left: 0;
+  top: 0;
+  width: 100%; /* width complet*/
+  height: 100%; /* hauteur complet */
+  overflow: auto; /* Permet un scroll au besoin */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement*/
+}
+
+.popup-contenu {
+  background-color: #07a702;
+  margin: auto; /* Centre le contenu du popoup*/
+  padding: 20px;
+  border: 1px solid #f50505;
+  width: 80%; /* Ajust la grandeur du popup et du contenu */
+  max-width: 500px; /* met une grandeur maximale */
+  border-radius: 8px;
+  text-align: center;
+}
+
+.joli {
+  width: 100%;
+  border: 3px solid hsl(0, 45%, 48%);
+  background-color: #0f7e0b;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  /* Garantit que le remplissage et la bordure sont inclus dans la largeur et l'hauteur définie*/
+}
+
+.table {
+  border-collapse: collapse;
+  border: 1px solid rgba(128, 128, 128, 0);
+  width: 90%;
+  float: center;
+  margin: 0 auto;
+}
+.form {
+>>>>>>> 4dd46e08dd071b1dfbaeaecc591281645a1fa431
+  text-align: center;
 }
