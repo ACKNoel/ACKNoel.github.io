@@ -63,7 +63,7 @@ function debuterJeu() {
     
     let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
                             <input type=\"text\" id=\"txtReponse\" style=\"border-radius: 8px;\">\
-                            <input type=\"button\" id=\"btnSoumet\" onclick=\"confirmeReponse()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
+                            <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
 
     let messagePremierIndice = "<p><b>Indice 1:</b> " + tblIndices[pays][indice] + "</p>";
 
@@ -79,7 +79,7 @@ function correcteur() {
     //déclaration des variables
     let message;
     let messageProchainJeu;
-    let reponse = document.getElementById("reponse").value;
+    let reponse = document.getElementById("txtReponse").value;
 
     //si la réponse est correct, on ajoute au score et recommence le jeu
     if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
@@ -115,7 +115,7 @@ function recommenceJeu() {
     
     let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
                             <input type=\"text\" id=\"txtReponse\" style=\"border-radius: 8px;\">\
-                            <input type=\"button\" id=\"btnSoumet\" onclick=\"confirmeReponse()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
+                            <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
 
     let messagePremierIndice = "<p><b>Indice 1:</b> " + tblIndices[pays][indice] + "</p>";
 
