@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+<!--Auteur: Angéline, Corie, Kaitlyn-->
+<!--DOCTYPE html-->
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Score final</title>
-        <style>
 
+	<head>
+		<meta charset="UTF-8">
+		<title>Trouve le père Noël ?</title>
+        <link rel="stylesheet" href="css/stylesheet.css">
+	</head>
+	<!--source de l'image: https://www.vecteezy.com/vector-art/9432551-night-sky-with-full-moon-and-clouds-->
+	<body style = "background-image: url('image/nuage.jpg'); ">
+		<style>
+			body {
+				/*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
+				background-repeat: no-repeat; /* previent image de se répéter */
+				background-size: cover; /* Change la taille de l'image pour qu'il couvre tout l'écran sans distortion*/
+				background-position: center; /*Centre l'image dans l'arrière plan*/
+
+
+			}
             /*Source: https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text*/
             h1 {
                 text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
@@ -16,16 +29,46 @@
                 text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
                 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
             }
-        </style>
-    </head>
-    <body style = "background-image: url('image/nuage.jpg'); ">
-        <center>
-            <h1>Score final:</h1>
+
+			img {
+				margin: auto;
+				max-width:35%;
+				margin-left: 33.1%;
+				top: 20%;
+                bottom: 50%;
+                display: block; 
+                height: 50%;
+
+    		}
+
+		</style>
+		<center>
+            <div id="boiteNomUtilisateur">
+
+            </div>
             <div id="boiteScoreFinal">
 
             </div>
+        <table class="table">
+        <tr style = "height: 50%;">
+            <td><img src="image/pereNoelPlage.jpg"/></td>
+        </tr>
+        <tr>
+            <td>        
+                <form>
+                    <input type="button" id="btnRecommence" onclick="location.href = 'trouveperenoel.html';" value="Recommencer" class="button2" style ="display:block"></td>
+                </form>
+        </tr>
+<!--
+            <div id="image">
+            <img src="image/pereNoelPlage.jpg"/></centre>
+            </div>
         </center>
-
+        <form>
+        <div>
+        <input type="button" id="btnRecommence" onclick="location.href = 'trouveperenoel.html';" value="Recommencer" class="button" style ="display:block">
+        </div>    
+    </form> -->
         <script src="js/scoreFinal.js"></script>
-    </body>
+	</body>
 </html>
