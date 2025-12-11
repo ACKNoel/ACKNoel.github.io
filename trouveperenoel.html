@@ -18,8 +18,8 @@
             <table class="table">
                 <tr>
                     <td style="width: 50%;">
-                        <p><b>Score:</b> code angéline
-                        <br>nom utilisateur code
+                        <div id="boiteScore"><p><b>Score:</b> code angéline</div>
+                        <div id="boiteNom"><br>nom utilisateur code </div>
                         </p>
                     </td>
                     <td> 
@@ -43,6 +43,7 @@
                                     <br>5 indices: 20 pts
                                     <br>Réponse incorrecte: 0 pts
                                 </p>
+                                <p>Vos 3 minutes commencent quand vous cliquez "Commencer!"</p>
                                 <button id="fermerPopupBtn" style="border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">Fermer</button>
                             </div>
                         </div>
@@ -57,22 +58,18 @@
             <form class="form">
                 <!-- Indice -->
                 <div class="joli" id="divIndice" style="width: 80%;">
-                    <p></p>
+                    <p>gugfusdiufgsu</p>
                 </div>
                 <br>
             <br>
             <br>
             <br>
-                <!-- textbox pour la réponse soumise -->
-                <label for="txtReponse">Réponse:</label>
-                <input type="text" id="txtReponse" style="border-radius: 8px;">
-                <!-- bouton pour soumettre la réponse -->
-                <input type="button" id="btnSoumet" onclick="confirmeReponse()"  value="Vérifier" style="border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">
-                <br><br>
-                <!-- Création d'une section pour l'affichage des résultats -->
-                <div id="divAffiche">
+                <!-- Ou la section réponse va avec la possibilité de soumettre un réponse -->
+                <div id="divReponse">
+                    <button onclick="tempsCommence(); debuterJeu()">Commencer !</button>
                 </div>
-            </form>   
+            </form>  
+
         <script>
             const ouvrirPopupBtn = document.getElementById('ouvrirPopupBtn');
             const fermerPopupBtn = document.getElementById('fermerPopupBtn');
@@ -85,6 +82,18 @@
             fermerPopupBtn.onclick = function() {
                 popupAide.style.display = 'none'; // Cacher le popup
             }
+            
+            //Source de setTimeout: https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
+            function tempsCommence(){
+                let temps=180
+                while(temps != 0){
+                    setTimeout(() => {
+                        temps = temps-1
+                    }, 1000);
+                }
+                window.location.href = "scorefinal.html";
+            }
+
         </script>
         <script src="js/scriptPrincipal.js"></script>
     </body>
