@@ -28,23 +28,23 @@ let indice = 0;
 let score = 0;
 let nom = localStorage.getItem("nomUtilisateur");
 
+let boiteAffiche = document.getElementById("divIndice");
+let boiteReponse = document.getElementById("divReponse");
+let boiteNomUtilisateur = document.getElementById("boiteNom");
+let boiteScore = document.getElementById("boiteScore");
+
 localStorage.setItem("score", 0);
 
 //CODE PRINCIPAL:
 
-//Source: https://stackoverflow.com/questions/16133491/detect-what-page-you-are-on-javascript
-//met le nom d'utilisateur sur la page si c'est la page principal
-
-let boiteNomUtilisateur = document.getElementById("boiteNom");
-let boiteScore = document.getElementById("boiteScore");
 let messageNom;
 
 //s'il n'y a pas de nom d'utilisateur, ??? devient le nom
 if (nom == undefined) {
-    messageNom = "???";
+    messageNom = "<p><b>NOM:</b> Sans nom</p>";
 }
 else {
-    messageNom = nom;
+    messageNom = "<p><b>NOM:</b> " + nom + "</p>";
    
 }
 //affiche le nom d'utilisateur sur la page
@@ -55,8 +55,21 @@ boiteScore.innerHTML = score;
 
 //Source: https://www.w3schools.com/js/js_random.asp
 //fonction qui choisit un pays selon l'index du tableau de pays 
-function pigePays() {
+function debuterJeu() {
     pays = Math.floor(Math.random() * (tblPays.length));
+
+    score = 0;
+    indice = 0;
+    
+    let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
+                            <input type=\"text\" id=\"txtReponse\" style=\"border-radius: 8px;\">\
+                            <input type=\"button\" id=\"btnSoumet\" onclick=\"confirmeReponse()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
+
+    let messagePremierIndice = "<p><b>Indice 1:</b> " + tblIndices[pays][indice] + "</p>";
+
+    boiteScore.innerHTML = score;
+    boiteReponse.innerHTML = messageRepondre;
+    boiteAffiche.innerHTML = messagePremierIndice;
 }
 
 //fonction qui prend une réponse de l'utilisateur et vérifie s'il est correct
@@ -65,7 +78,7 @@ function pigePays() {
 function correcteur() {
     //déclaration des variables
     let message;
-    let boiteAffiche = document.getElementById("divIndice");
+    let messageProchainJeu;
     let reponse = document.getElementById("reponse").value;
 
     //si la réponse est correct, on ajoute au score et recommence le jeu
@@ -74,15 +87,38 @@ function correcteur() {
         boiteScore.innerHTML = score;
         localStorage.setItem("score", score);
 
-        message = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
-        indice = 0;
+        message = "<p>Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".</p>";
+        messageProchainJeu = "<input type=\"button\" onclick=\"recommenceJeu()\" value=\"Prochain\"></input>"
+    }
+    //si il n'y a plus d'indices, recommencer le jeu
+    else if (indice == 4) {
+        message = "<p>Vous avez failli. <br><br>Le pays était " + tblPays[pays] + ".</p>";
+        messageProchainJeu = "<input type=\"button\" value=\"Prochain\"></input>"
+        
+        boiteReponse.innerHTML = messageProchainJeu
     }
     //si la réponse est incorrect, on va au prochain indice en utilisant le tableau d'indices
     else {
         indice++;
-        message = "Incorrect. Voici le prochain indice:<br>" + tblIndices[pays][indice];
+        message = "<p>Incorrect. Voici le prochain indice:<br>" + tblIndices[pays][indice] + "</p>";
     }
 
     //affiche le message défini auparavant
     boiteAffiche.innerHTML = message;
+}
+
+//fonction qui recommence le jeu en pigeant un autre pays
+function recommenceJeu() {
+    pays = Math.floor(Math.random() * (tblPays.length));
+
+    indice = 0;
+    
+    let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
+                            <input type=\"text\" id=\"txtReponse\" style=\"border-radius: 8px;\">\
+                            <input type=\"button\" id=\"btnSoumet\" onclick=\"confirmeReponse()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
+
+    let messagePremierIndice = "<p><b>Indice 1:</b> " + tblIndices[pays][indice] + "</p>";
+
+    boiteReponse.innerHTML = messageRepondre;
+    boiteAffiche.innerHTML = messagePremierIndice;
 }
