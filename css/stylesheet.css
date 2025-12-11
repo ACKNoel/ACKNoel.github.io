@@ -91,3 +91,23 @@ margin: 0 auto;
   width: 100%; 
   text-align: center;
 }
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.timer{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.boiteTemps{
+  display: flex;
+  gap: 90px;
+}
+.temps{
+  text-align: center;
+}
