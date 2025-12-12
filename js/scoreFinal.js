@@ -2,6 +2,11 @@
 
 let score = localStorage.getItem("score");
 let nom = localStorage.getItem("nomUtilisateur");
+
+if (nom == undefined) {
+    nom = "Sans nom";
+}
+
 let boiteScoreFinal = document.getElementById("boiteScoreFinal");
 let boiteNomUtilisateur = document.getElementById("boiteNomUtilisateur");
 let messageScoreFinal = "<p>Score: " + score + "</p>";
