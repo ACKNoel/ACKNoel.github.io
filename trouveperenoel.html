@@ -10,23 +10,44 @@
                 margin-left: 0;
                 margin-right: 0;
             }
+            .buttonRetour {
+                border: none; 
+                float: right; 
+                display: flex; 
+                max-height: 100%; 
+                max-width: 1000%; 
+                background-color: #4caf4f00;
+            }
+            table{
+                border-collapse: collapse;
+                border: solid 1px #92ce8c;
+                width: 90%;
+                float: center;
+                margin: 0 auto;
+            }
+            td {
+                border: solid 1px #92ce8c;
+            }
+            
         </style>
     </head>
 	<body>
-	<body>
-        <header>
-            <table class="table">
+        <header style: >
+            <table>
                 <tr>
-                    <td style="width: 50%;">
+                    <td style="width: 90%;">
                         <div id="boiteScore"><p><b>Score:</b> code angéline</div>
                         <div id="boiteNom"><br>nom utilisateur code </div>
                         </p>
                     </td>
                     <td> 
                         <a href="index.html">
-                            <button type="button" style="border: none; float: center; display: flex; max-height: 20%; max-width: 20%; background-color: #4caf4f00; width: 15%"><img src="image/retourindeximage.png" alt="Boutton refresh"/></button>
+                            <button type="button" class="buttonRetour"><img src="image/retourindeximage.png" alt="Boutton refresh" style="width: 100%;"/></button>
                         </a>
-                        <button id="ouvrirPopupBtn" style="border: none; float: right; display: flex; max-height: 20%; max-width: 20%; background-color: #4caf4f00; width: 15%"><img src="image/aidebg.png" alt="Boutton refresh"/></button>
+                    </td>
+                    <td>
+                        <button id="ouvrirPopupBtn" class="buttonRetour"><img src="image/aidebg.png" alt="Boutton refresh" style="width: 150%"/></button>
+                    </td>
                         <div id="popupAide" class="popup-overlay">
                             <div class="popup-contenu">
                                 <h2>Trouve le Père Noël</h2>
@@ -47,8 +68,7 @@
                                 <button id="fermerPopupBtn" style="border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">Fermer</button>
                             </div>
                         </div>
-                    </td>
-                </tr>
+                    </tr>
             </table>
         </header>
             <br>
@@ -58,7 +78,7 @@
             <form class="form">
                 <!-- Indice -->
                 <div class="joli" id="divIndice" style="width: 80%;">
-                    <p>gugfusdiufgsu</p>
+                    <p>Cliquez le bouton pour commencer!</p>
                 </div>
                 <br>
             <br>
@@ -66,7 +86,7 @@
             <br>
                 <!-- Ou la section réponse va avec la possibilité de soumettre un réponse -->
                 <div id="divReponse">
-                    <button onclick="tempsCommence(); debuterJeu()">Commencer !</button>
+                    <button onclick="debuterJeu()">Commencer !</button>
                 </div>
             </form>  
 

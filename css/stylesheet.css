@@ -92,14 +92,6 @@ border-radius: 8px;
 /* Garantit que le remplissage et la bordure sont inclus dans la largeur et l'hauteur définie */
 }
 
-.table {
-border-collapse: collapse;
-border: 1px solid rgba(128, 128, 128, 0);
-width: 90%;
-float: center;
-margin: 0 auto;
-}
-
 .form {
   width: 100%; 
   text-align: center;
