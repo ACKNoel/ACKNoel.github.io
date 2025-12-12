@@ -33,11 +33,13 @@ let boiteReponse = document.getElementById("divReponse");
 let boiteNomUtilisateur = document.getElementById("boiteNom");
 let boiteScore = document.getElementById("boiteScore");
 
-localStorage.setItem("score", 0);
+let messageIndices;
+let messageNom;
+let messageScore = "<p><b>SCORE:</b> " + score;
 
 //CODE PRINCIPAL:
 
-let messageNom;
+localStorage.setItem("score", 0);
 
 //s'il n'y a pas de nom d'utilisateur, ??? devient le nom
 if (nom == undefined) {
@@ -49,7 +51,7 @@ else {
 }
 //affiche le nom d'utilisateur sur la page
 boiteNomUtilisateur.innerHTML = messageNom;
-boiteScore.innerHTML = score;
+boiteScore.innerHTML = messageScore;
 
 //FONCTIONS:
 
@@ -65,11 +67,12 @@ function debuterJeu() {
                             <input type=\"text\" id=\"txtReponse\" style=\"border-radius: 8px;\">\
                             <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
 
-    let messagePremierIndice = "<p><b>Indice 1:</b> " + tblIndices[pays][indice] + "</p>";
+    messageIndices = "<b>Indice 1:</b> " + tblIndices[pays][indice];
+    messageScore = "<p><b>SCORE:</b> " + score;
 
-    boiteScore.innerHTML = score;
+    boiteScore.innerHTML = messageScore;
     boiteReponse.innerHTML = messageRepondre;
-    boiteAffiche.innerHTML = messagePremierIndice;
+    boiteAffiche.innerHTML = "<p>" + messageIndices + "</p>";
 }
 
 //fonction qui prend une réponse de l'utilisateur et vérifie s'il est correct
@@ -77,34 +80,42 @@ function debuterJeu() {
 //si la réponse est incorrect, on va à la prochaine indice
 function correcteur() {
     //déclaration des variables
-    let message;
     let messageProchainJeu;
     let reponse = document.getElementById("txtReponse").value;
 
     //si la réponse est correct, on ajoute au score et recommence le jeu
     if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
         score = score + (100 - indice*20);
-        boiteScore.innerHTML = score;
+
+        messageScore = "<p><b>SCORE:</b> " + score;
+
+        boiteScore.innerHTML = messageScore;
         localStorage.setItem("score", score);
 
-        message = "<p>Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".</p>";
-        messageProchainJeu = "<input type=\"button\" onclick=\"recommenceJeu()\" value=\"Prochain\"></input>"
+        messageIndices = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
+        messageProchainJeu = "<input type=\"button\" onclick=\"recommenceJeu()\" value=\"Prochain\"></input>";
+        
+        boiteReponse.innerHTML = messageProchainJeu;
     }
     //si il n'y a plus d'indices, recommencer le jeu
     else if (indice == 4) {
-        message = "<p>Vous avez failli. <br><br>Le pays était " + tblPays[pays] + ".</p>";
-        messageProchainJeu = "<input type=\"button\" value=\"Prochain\"></input>"
+        messageIndices = "Vous avez failli. <br><br>Le pays était " + tblPays[pays] + ".";
+        messageProchainJeu = "<input type=\"button\" onclick=\"recommenceJeu()\" value=\"Prochain\"></input>";
         
-        boiteReponse.innerHTML = messageProchainJeu
+        boiteReponse.innerHTML = messageProchainJeu;
     }
     //si la réponse est incorrect, on va au prochain indice en utilisant le tableau d'indices
     else {
         indice++;
-        message = "<p>Incorrect. Voici le prochain indice:<br>" + tblIndices[pays][indice] + "</p>";
+        messageIndices = messageIndices + "<br><b>Indice " + (indice + 1) + ":</b> " + tblIndices[pays][indice];
+        
+        if (indice == 1) {
+            messageIndices = "Incorrect.<br>" + messageIndices;
+        }
     }
 
     //affiche le message défini auparavant
-    boiteAffiche.innerHTML = message;
+    boiteAffiche.innerHTML = "<p>" + messageIndices + "</p>";
 }
 
 //fonction qui recommence le jeu en pigeant un autre pays
@@ -115,10 +126,10 @@ function recommenceJeu() {
     
     let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
                             <input type=\"text\" id=\"txtReponse\" style=\"border-radius: 8px;\">\
-                            <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>"
+                            <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>";
 
-    let messagePremierIndice = "<p><b>Indice 1:</b> " + tblIndices[pays][indice] + "</p>";
+    messageIndices = "<b>Indice 1:</b> " + tblIndices[pays][indice];
 
     boiteReponse.innerHTML = messageRepondre;
-    boiteAffiche.innerHTML = messagePremierIndice;
+    boiteAffiche.innerHTML = "<p>" + messageIndices + "</p>";
 }
