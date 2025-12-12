@@ -49,7 +49,7 @@ let messageScore;
 localStorage.setItem("score", 0);
 
 //s'il n'y a pas de nom d'utilisateur, "Sans nom" devient le nom
-if (nom == undefined) {
+if ((nom == undefined) || (nom == "")) {
     messageNom = "<p><b>NOM:</b> Sans nom</p>";
 }
 else {
