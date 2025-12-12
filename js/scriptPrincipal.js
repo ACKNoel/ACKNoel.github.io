@@ -102,15 +102,15 @@ function correcteur() {
         //ajoute au score dépendant sur le nombre d'indices utilisés
         score = score + (100 - indice*20);
 
-        //affiche et store le nouveau score
-        boiteScore.innerHTML = messageScore;
-        localStorage.setItem("score", score);
-
         //crée le text et un bouton à afficher sur la page
         messageScore = "<p><b>SCORE:</b> " + score;
         messageIndices = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
         messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
         
+        //affiche et store le nouveau score
+        boiteScore.innerHTML = messageScore;
+        localStorage.setItem("score", score);
+
         //affiche le bouton pour passer au prochain jeu
         boiteReponse.innerHTML = messageProchainJeu;
     }
