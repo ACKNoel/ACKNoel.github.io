@@ -6,10 +6,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Trouve le père Noël ?</title>
-        <link rel="stylesheet" href="css/stylesheet.css">
+		<link rel="icon" type="image/png" href="https://uploads.onecompiler.io/43yvfjg6b/4479w7tqk/Screenshot_2025-12-08_17.21.13-removebg-preview%20(1).png"> 
+    <link rel="stylesheet" href="css/stylesheet.css">
 	</head>
 	<!--source de l'image: https://www.vecteezy.com/vector-art/9432551-night-sky-with-full-moon-and-clouds-->
-	<body style = "background-image: url('image/nuage.jpg'); ">
+	<body style = "background-image: url('https://uploads.onecompiler.io/43yvfjg6b/4479urpv9/nuage.jpg'); ">
 		<style>
 			body {
 				/*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
@@ -40,18 +41,22 @@
                 height: 50%;
 
     		}
+    	td {
+    	  padding: 2%;
+    	}
 
 		</style>
 		<center>
-            <div id="boiteNomUtilisateur">
+            <div id="boiteNomUtilisateur" style ="margin-top: 5%">
 
             </div>
             <div id="boiteScoreFinal">
 
             </div>
+        </center>
         <table class="table">
-        <tr style = "height: 50%;">
-            <td><img src="image/pereNoelPlage.jpg"/></td>
+        <tr>
+            <td><img src="https://uploads.onecompiler.io/43yvfjg6b/4479urpv9/pereNoelPlage.jpg"/></td>
         </tr>
         <tr>
             <td>        
@@ -59,16 +64,5 @@
                     <input type="button" id="btnRecommence" onclick="location.href = 'trouveperenoel.html';" value="Recommencer" class="button2" style ="display:block"></td>
                 </form>
         </tr>
-<!--
-            <div id="image">
-            <img src="image/pereNoelPlage.jpg"/></centre>
-            </div>
-        </center>
-        <form>
-        <div>
-        <input type="button" id="btnRecommence" onclick="location.href = 'trouveperenoel.html';" value="Recommencer" class="button" style ="display:block">
-        </div>    
-    </form> -->
         <script src="js/scoreFinal.js"></script>
 	</body>
-</html>
