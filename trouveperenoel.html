@@ -10,23 +10,12 @@
                 margin-left: 0;
                 margin-right: 0;
             }
-            .buttonRetour {
-                border: none; 
-                float: right; 
-                display: flex; 
-                max-height: 100%; 
-                max-width: 1000%; 
-                background-color: #4caf4f00;
-            }
-            table{
+            table {
                 border-collapse: collapse;
                 border: solid 1px #92ce8c;
                 width: 90%;
                 float: center;
                 margin: 0 auto;
-            }
-            td {
-                border: solid 1px #92ce8c;
             }
             
         </style>
@@ -46,7 +35,7 @@
                         </a>
                     </td>
                     <td>
-                        <button id="ouvrirPopupBtn" class="buttonRetour"><img src="image/aidebg.png" alt="Boutton refresh" style="width: 150%"/></button>
+                        <button id="ouvrirPopupBtn" class="buttonRetour"><img src="image/aidebg.png" alt="Boutton refresh" style="width: 180%"/></button>
                     </td>
                         <div id="popupAide" class="popup-overlay">
                             <div class="popup-contenu">
@@ -65,7 +54,7 @@
                                     <br>Réponse incorrecte: 0 pts
                                 </p>
                                 <p>Vos 3 minutes commencent quand vous cliquez "Commencer!"</p>
-                                <button id="fermerPopupBtn" style="border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);">Fermer</button>
+                                <button id="fermerPopupBtn" class="buttonStyle">Fermer</button>
                             </div>
                         </div>
                     </tr>
@@ -86,7 +75,7 @@
             <br>
                 <!-- Ou la section réponse va avec la possibilité de soumettre un réponse -->
                 <div id="divReponse">
-                    <button onclick="debuterJeu()">Commencer !</button>
+                    <button onclick="debuterJeu()" class="buttonStyle">Commencer !</button>
                 </div>
             </form>  
 
