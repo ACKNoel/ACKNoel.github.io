@@ -28,6 +28,7 @@ let pays = Math.floor(Math.random() * (tblPays.length));
 let indice = 0;
 let score = 0;
 let nom = localStorage.getItem("nomUtilisateur");
+let paysDevine = 0;
 
 let boiteAffiche = document.getElementById("divIndice");
 let boiteReponse = document.getElementById("divReponse");
@@ -71,8 +72,8 @@ function debuterJeu() {
 
     //crée le text et un bouton qui sera affiché sur la page
     let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
-                            <input type=\"text\" id=\"txtReponse\" style=\"border-radius: 8px;\">\
-                            <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\" style=\"border-radius: 8px; background-color: rgb(7, 105, 16); color: rgb(231, 238, 232);\"></input>";
+                            <input type=\"text\" id=\"txtReponse\">\
+                            <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\"></input>";
 
     messageIndices = "<b>Indice 1:</b> " + tblIndices[pays][indice];
     messageScore = "<p><b>SCORE:</b> " + score;
@@ -93,6 +94,9 @@ function correcteur() {
 
     //si la réponse est correct, on ajoute au score et recommence le jeu
     if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
+        
+        paysDevine++;
+        
         //ajoute au score dépendant sur le nombre d'indices utilisés
         score = score + (100 - indice*20);
 
@@ -102,18 +106,33 @@ function correcteur() {
         //crée le text et un bouton à afficher sur la page
         messageScore = "<p><b>SCORE:</b> " + score;
         messageIndices = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
-        messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
+        
+        if (paysDevine == 5) {
+            messageProchainJeu = "<input type=\"button\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
+        }
+        else {
+            messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
+        }
+
+
 
         //affiche le score et le bouton pour passer au prochain jeu
         boiteReponse.innerHTML = messageProchainJeu;
         boiteScore.innerHTML = messageScore;
-
     }
     //s'il n'y a plus d'indices, recommencer le jeu
     else if (indice == 4) {
+        paysDevine++;
+
         //crée le text et un bouton à afficher sur la page
         messageIndices = "Vous avez failli. <br><br>Le pays était " + tblPays[pays] + ".";
-        messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
+        
+        if (paysDevine == 5) {
+            messageProchainJeu = "<input type=\"button\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
+        }
+        else {
+            messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
+        }
 
         //affiche le bouton pour passer au prochain jeu
         boiteReponse.innerHTML = messageProchainJeu;
