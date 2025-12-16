@@ -114,7 +114,8 @@ function correcteur() {
             messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
         }
 
-
+        tblPays.splice(pays, 1);
+        tblIndices.splice(pays, 1);
 
         //affiche le score et le bouton pour passer au prochain jeu
         boiteReponse.innerHTML = messageProchainJeu;
@@ -133,6 +134,9 @@ function correcteur() {
         else {
             messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
         }
+
+        tblPays.splice(pays, 1);
+        tblIndices.splice(pays, 1);
 
         //affiche le bouton pour passer au prochain jeu
         boiteReponse.innerHTML = messageProchainJeu;
