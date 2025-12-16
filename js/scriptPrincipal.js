@@ -108,10 +108,10 @@ function correcteur() {
         messageIndices = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
         
         if (paysDevine == 5) {
-            messageProchainJeu = "<input type=\"button\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
+            messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
         }
         else {
-            messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
+            messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
         }
 
         tblPays.splice(pays, 1);
@@ -129,10 +129,10 @@ function correcteur() {
         messageIndices = "Vous avez failli. <br><br>Le pays était " + tblPays[pays] + ".";
         
         if (paysDevine == 5) {
-            messageProchainJeu = "<input type=\"button\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
+            messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
         }
         else {
-            messageProchainJeu = "<input type=\"button\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
+            messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
         }
 
         tblPays.splice(pays, 1);
