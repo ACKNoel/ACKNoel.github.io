@@ -6,13 +6,13 @@
 		<link rel="stylesheet" href="css/stylesheet.css">	
         <style>
             body {
-                background-color: #92ce8c;
+                background-color: #c1f3bc;
                 margin-left: 0;
                 margin-right: 0;
             }
             table {
                 border-collapse: collapse;
-                border: solid 1px #92ce8c;
+                border: solid 1px #92ce8c00;
                 width: 90%;
                 float: center;
                 margin: 0 auto;
@@ -40,11 +40,13 @@
                         <div id="popupAide" class="popup-overlay">
                             <div class="popup-contenu">
                                 <h2>Trouve le Père Noël</h2>
+                                <br>
                                 <p><b>Objectif: </b> 
                                     <br>Votre objectif est de trouver le pays dans lequel le Père Noël se cache. À l'aide des indices fournies vous devez soumettre votre meilleure indice. 
-                                    <br>Vous devez compléter le plus de rondes possibles avant que le temps s'écoule. 
-                                    <br><br>*Vos points seront accordés selon le nombre d'indices requis*
+                                    <br><br>Vous devez compléter le plus de rondes possibles de 5. 
+                                    <br><br>*Vos points seront accordés selon le nombre d'indices requis pour compléter la ronde*
                                 </p>
+                                <br>
                                 <p><b>Pointage: </b>
                                     <br>1 indice: 100 pts
                                     <br>2 indices: 80 pts
@@ -53,7 +55,9 @@
                                     <br>5 indices: 20 pts
                                     <br>Réponse incorrecte: 0 pts
                                 </p>
-                                <p>Vos 3 minutes commencent quand vous cliquez "Commencer!"</p>
+                                <br>
+                                <p>Votre premier indice sera fournis quand vous cliquez "Commencer!"</p>
+                                <br>
                                 <button id="fermerPopupBtn" class="buttonStyle">Fermer</button>
                             </div>
                         </div>
@@ -66,7 +70,8 @@
             <br>
             <form class="form">
                 <!-- Indice -->
-                <div class="joli" id="divIndice" style="width: 80%;">
+                <div class="joli" id="divIndice" style="width: 80%; min-height: 50px;">
+                    <br>
                     <p>Cliquez le bouton pour commencer!</p>
                 </div>
                 <br>
