@@ -54,7 +54,7 @@
   border-color:hsl(0, 45%, 48%);
   background-color:#0f7e0b; 
   color: rgb(231, 238, 232);
-  padding: 0.5%
+  padding: 3px;
 }
 
 .buttonHaut { /*donne le style au bouton en haut et droite de la page trouvePereNoël*/
@@ -89,7 +89,7 @@ background-color: #0f7e0b;
 color: white;
 margin: auto; /* Centre le contenu du popoup */
 padding: 20px;
-border: 1px solid #f50505;
+border: 3px solid hsl(0, 45%, 48%);
 width: 80%; /* Ajust la grandeur du popup et du contenu */
 max-width: 500px; /* met une grandeur maximale */
 border-radius: 8px;
@@ -98,7 +98,7 @@ text-align: center;
 
 .joli { /* Styles pour la boite indice */
 width: 100%;
-border: 3px solid hsl(0, 45%, 48%);
+border: 3px solid  hsl(0, 45%, 48%);
 background-color: #0f7e0b;
 display: flex;
 justify-content: center;
@@ -112,12 +112,41 @@ border-radius: 8px;
 
 .joli p { /* Styles pour tout les childrens de balises "p" d'un element */
 padding-top: 15px; 
+padding-bottom: 15px;
 color: white;
+}
+
+#divReponse label{
+  color: white;
+}
+
+#btnSoumet{
+  border-radius: 8px; 
+  border-color:hsl(0, 45%, 48%);
+  background-color:#0f7e0b; 
+  color: rgb(231, 238, 232);
+  padding: 3px;
+}
+
+#txtReponse{
+  border-radius: 8px; 
+  border-color:hsl(0, 45%, 48%);
+  background-color:white; 
+  color: #0f7e0b;
+  padding: 2px;
 }
 
 .form {
   width: 100%; 
   text-align: center;
+}
+
+.bouttonProchain { /* Styles pour le boutton prochain */
+  border-radius: 8px; 
+  border-color:hsl(0, 45%, 48%);
+  background-color:#0f7e0b; 
+  color: rgb(231, 238, 232);
+  padding: 3px;
 }
 
 *{ /* Applique du style sur tout le document */
