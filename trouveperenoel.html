@@ -6,11 +6,6 @@
 		<link rel="stylesheet" href="css/stylesheet.css">	
         <link rel="icon" type="image/png" href="image/logo.png"> 
         <style>
-            body {
-                background-color: #0a0822;
-                margin-left: 0;
-                margin-right: 0;
-            }
             table {
                 border-collapse: collapse;
                 border: solid 1px #92ce8c00;
@@ -18,11 +13,21 @@
                 width: 90%;
                 float: center;
                 margin: 0 auto;
-            }
-            
+            }     
         </style>
     </head>
-	<body>
+   <body>
+		<style>
+			body {
+				/*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
+                /* source: https://stackoverflow.com/questions/26236486/background-size-cover-not-working#:~:text=Chris%20Over%20a%20year%20ago,12*/
+                background-image: url('image/étoile.jpg');
+				background-repeat: no-repeat; /* previent image de se répéter */
+				background-size: cover; /* Change la taille de l'image pour qu'il couvre tout l'écran sans distortion*/
+				background-position: center; /*Centre l'image dans l'arrière plan*/
+                background-attachment: fixed /*demeure à la même place même si l'utilisateur le défile vers le bas*/
+            }
+        </style>
         <header style="margin-top:2.5%">
             <table>
                 <tr>
