@@ -36,20 +36,12 @@ let boiteNomUtilisateur = document.getElementById("boiteNom");
 let boiteScore = document.getElementById("boiteScore");
 
 let messageIndices;
-let messageNom;
+let messageNom = "<p><b>NOM:</b> " + nom + "</p>";
 let messageScore;
 
 //CODE PRINCIPAL:
 
 localStorage.setItem("score", 0);
-
-//s'il n'y a pas de nom d'utilisateur, "Sans nom" devient le nom
-if ((nom == undefined) || (nom == "")) {
-    messageNom = "<p><b>NOM:</b> Sans nom</p>";
-}
-else {
-    messageNom = "<p><b>NOM:</b> " + nom + "</p>";
-}
 
 //crée le message de score qui sera affiché
 messageScore = "<p><b>SCORE:</b> " + score;
