@@ -13,11 +13,12 @@ fermerPopup.onclick = function() {
 //fonction qui cherche le nom d'utilisateur inscrit
 function chercheNomUtilisateur() {
     let entreeNom = document.getElementById("nomUtilisateur").value;
-    while (entreeNom.length <= 1){
+    if (entreeNom.length <= 1){
         ouvrirPopup();
-        location.href = "index.html";
         entreeNom = document.getElementById("nomUtilisateur").value;
     }
-    localStorage.setItem("nomUtilisateur", entreeNom);
-    location.href = "trouveperenoel.html";
+    else {
+        location.href = "trouveperenoel.html";
+        localStorage.setItem("nomUtilisateur", entreeNom);
+    }
 }
