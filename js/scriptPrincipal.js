@@ -1,3 +1,5 @@
+//Auteur: Angéline, Corie, Kaitlyn
+
 //DÉCLARATION DES VARIABLES:
 
 //tableau qui contient les pays possibles
