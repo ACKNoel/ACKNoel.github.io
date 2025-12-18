@@ -2,18 +2,20 @@
 
 const invalide = document.getElementById("popupRetry")
 function ouvrirPopup() {
-    popup.style.display = "block";
+    invalide.style.display = "flex";
 }
-// Function to close the popup
-function fermerPopup() {
-    popup.style.display = "none";
+
+fermerPopup.onclick = function() {
+    invalide.style.display = 'none'; // Cacher le popup
 }
+
     
 //fonction qui cherche le nom d'utilisateur inscrit
 function chercheNomUtilisateur() {
     let entreeNom = document.getElementById("nomUtilisateur").value;
     while (entreeNom.length == 0){
         ouvrirPopup();
+        location.href = "index.html";
         entreeNom = document.getElementById("nomUtilisateur").value;
     }
     localStorage.setItem("nomUtilisateur", entreeNom);
