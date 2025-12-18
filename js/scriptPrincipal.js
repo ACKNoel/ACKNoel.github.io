@@ -38,6 +38,9 @@ let boiteScore = document.getElementById("boiteScore");
 let messageIndices;
 let messageNom = "<p><b>NOM:</b> " + nom + "</p>";
 let messageScore;
+let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
+                       <input type=\"text\" id=\"txtReponse\">\
+                       <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\"></input>";
 
 //CODE PRINCIPAL:
 
@@ -63,9 +66,6 @@ function debuterJeu() {
     indice = 0;
 
     //crée le text et un bouton qui sera affiché sur la page
-    let messageRepondre = "<label for=\"txtReponse\">Réponse:</label>\
-                            <input type=\"text\" id=\"txtReponse\">\
-                            <input type=\"button\" id=\"btnSoumet\" onclick=\"correcteur()\"  value=\"Vérifier\"></input>";
 
     messageIndices = "<b>Indice 1:</b> " + tblIndices[pays][indice];
     messageScore = "<p><b>SCORE:</b> " + score;
@@ -76,6 +76,16 @@ function debuterJeu() {
     boiteAffiche.innerHTML = "<p>" + messageIndices + "</p>";
 }
 
+const invalide = document.getElementById("popupRetry");
+
+function ouvrirPopup() {
+    invalide.style.display = "flex";
+}
+
+fermerPopup.onclick = function() {
+    invalide.style.display = 'none'; // Cacher le popup
+}
+
 //fonction qui prend une réponse de l'utilisateur et vérifie s'il est correct
 //si la réponse est correct, on donne un montant de points selon le nombre d'indices utilisés
 //si la réponse est incorrect, on va à la prochaine indice
@@ -84,8 +94,11 @@ function correcteur() {
     let messageProchainJeu;
     let reponse = document.getElementById("txtReponse").value;
 
+    if (reponse.length <= 0){
+        ouvrirPopup();
+    }
     //si la réponse est correct, on ajoute au score et recommence le jeu
-    if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
+    else if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
         
         paysDevine++;
         
@@ -145,6 +158,8 @@ function correcteur() {
         if (indice == 1) {
             messageIndices = "Incorrect.<br>" + messageIndices;
         }
+
+        boiteReponse.innerHTML = messageRepondre;
     }
 
     //affiche le message défini auparavant
