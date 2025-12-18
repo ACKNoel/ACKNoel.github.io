@@ -1,4 +1,4 @@
-#text {
+#text { 
   text-align: center;
   color: #ffffff;
   margin: auto;
@@ -19,7 +19,6 @@
     top: 45%;
     position: absolute;
 }
-
 
 .button1 { /*premier bouton dans l'index*/
     border:3px solid rgb(129, 0, 0); 
@@ -51,7 +50,7 @@
     color: white
 }
 
-.buttonStyle { /*Style des bouttons du popup*/
+.buttonStyle { /*Style des bouttons divers sur la page. Garde les bouttons uniformes*/
   border-radius: 8px; 
   border-color:hsl(0, 45%, 48%);
   background-color:#0f7e0b; 
@@ -71,7 +70,7 @@
   background-color: rgb(129, 0, 0);
   color: rgb(2, 2, 2);
 }
-/* Source de référence du popup: https://www.w3schools.com/howto/howto_js_popup.asp à voir aussi google AI pour certains éléments */
+/* Source de référence du popup: https://www.w3schools.com/howto/howto_js_popup.asp pour le css et quelques recherches précis */
 .popup-overlay {
 display: none; /* Cache le popup par default */
 position: fixed; /* Reste en place */
@@ -105,11 +104,10 @@ background-color: #0f7e0b;
 display: flex;
 justify-content: center;
 text-align: center;
-margin-left: auto;
+margin-left: auto; /* margin auto centre la boite sur la page*/
 margin-right: auto;
 box-sizing: border-box;
-border-radius: 8px;
-/* Garantit que le remplissage et la bordure sont inclus dans la largeur et l'hauteur définie */
+border-radius: 8px; /* Garantit que le remplissage et la bordure sont inclus dans la largeur et l'hauteur définie */
 }
 
 .joli p { /* Styles pour tout les childrens de balises "p" d'un element */
@@ -118,11 +116,11 @@ padding-bottom: 15px;
 color: white;
 }
 
-#divReponse label{
+#divReponse label{ /* Change la couleur du texte "Réponse" */
   color: white;
 }
 
-#btnSoumet{
+#btnSoumet{ /* Styles pour le boutton soumet. Doit être séparer pour qu'il fonctionne avec le JS */
   border-radius: 8px; 
   border-color:hsl(0, 45%, 48%);
   background-color:#0f7e0b; 
@@ -130,7 +128,7 @@ color: white;
   padding: 3px;
 }
 
-#txtReponse{
+#txtReponse{ /* Styles pour la boite réponse du form */
   border-radius: 8px; 
   border-color:hsl(0, 45%, 48%);
   background-color:white; 
@@ -138,7 +136,7 @@ color: white;
   padding: 2px;
 }
 
-.form {
+.form { /* Modifie l'affichage du form pour le rendre beau*/
   width: 100%; 
   text-align: center;
 }
@@ -154,5 +152,5 @@ color: white;
 *{ /* Applique du style sur tout le document */
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /*Comprend le padding et les borders dans width et height*/
 }
