@@ -6,8 +6,8 @@
 		<link rel="stylesheet" href="css/stylesheet.css">	
         <link rel="icon" type="image/png" href="image/logo.png"> 
         <style>
-            table {
-                border-collapse: collapse;
+            table { /* style pour le table utilsier pour les bouttons en haut de page*/
+                border-collapse: collapse; /*Crée un border pour toutes les cellules qui unifie le tableau et permet le layout qu'on cherche*/
                 border: solid 1px #92ce8c00;
                 color: white;
                 width: 90%;
@@ -16,7 +16,7 @@
             }     
         </style>
     </head>
-   <body>
+    <body>
 		<style>
 			body {
 				/*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
@@ -28,8 +28,8 @@
                 background-attachment: fixed /*demeure à la même place même si l'utilisateur le défile vers le bas*/
             }
         </style>
-        <header style="margin-top:2.5%">
-            <table>
+        <header> <!-- Pour ma propre organisation. Cette balise m'aide à retrouver l'entête de la page mais n'éffectue pas un changement de la page-->
+            <table> <!-- Le tableau d'entête pour les bouttons, le score et le nom d'utilisateur-->
                 <tr>
                     <td style="width: 90%;">
                         <div id="boiteScore"><p><b>Score:</b> code angéline</div>
@@ -37,15 +37,15 @@
                         </p>
                     </td>
                     <td> 
-                        <a href="index.html">
+                        <a href="index.html"> <!-- Ce boutton est le wreath puis te retourne à la page d'accueil-->
                             <button type="button" class="buttonHaut"><img src="image/retourindeximage.png" alt="Boutton refresh" style="width: 100%;"/></button>
                         </a>
                     </td>
                     <td>
-                        <button id="ouvrirPopupBtn" class="buttonHaut"><img src="image/aidebg.png" alt="Boutton refresh" style="width: 180%"/></button>
+                        <button id="ouvrirPopupBtn" class="buttonHaut"><img src="image/aidebg.png" alt="Boutton refresh" style="width: 180%"/></button> <!-- Ce boutton est le ? puis ouvre le popup-->
                     </td>
-                        <div id="popupAide" class="popup-overlay">
-                            <div class="popup-contenu">
+                        <div id="popupAide" class="popup-overlay"> <!-- Ce div permet l'apparition d'un popup lorsque le boutton dans la cellule d'en haut est cliqué. Voir le script en bas-->
+                            <div class="popup-contenu"> <!-- Code pour le contenu des règles et des explications dans le popup -->
                                 <h2>Trouve le Père Noël</h2>
                                 <br>
                                 <p><b>Objectif: </b> 
@@ -67,7 +67,7 @@
                                 <br>
                                 <p>N'utiliser JAMAIS la clé "Entrée" sur votre claviez. Il ne va PAS soumettre votre réponse et recommencer votre jeux.</p>
                                 <br>
-                                <button id="fermerPopupBtn" class="buttonStyle">Fermer</button>
+                                <button id="fermerPopupBtn" class="buttonStyle">Fermer</button> <!-- Boutton dnas le popup qui le ferme -->
                             </div>
                         </div>
                     </tr>
@@ -78,7 +78,7 @@
             <br>
             <br>
             <form class="form">
-                <!-- Indice -->
+                <!-- Indices insérés ici-->
                 <div class="joli" id="divIndice" style="width: 80%; min-height: 50px;">
                     <br>
                     <p>Votre premier indice sera fournis quand vous cliquez "Commencer!"</p>
@@ -88,21 +88,22 @@
                 <br>
                 <br>
                 <!-- Ou la section réponse va avec la possibilité de soumettre un réponse -->
-                <div id="divReponse">
+                <div id="divReponse"> <!-- Ce boutton commence le jeu lui même. Il active une fonction JS qui controle le jeu-->
                     <button onclick="debuterJeu()" class="buttonStyle">Commencer !</button>
                 </div>
             </form>  
 
         <script>
+            //Sources: https://www.youtube.com/watch?v=AF6vGYIyV8M&t=698s + https://www.w3schools.com/howto/howto_js_popup.asp
             const ouvrirPopupBtn = document.getElementById('ouvrirPopupBtn');
             const fermerPopupBtn = document.getElementById('fermerPopupBtn');
             const popupAide = document.getElementById('popupAide');
 
-            ouvrirPopupBtn.onclick = function() {
+            ouvrirPopupBtn.onclick = function() { // Fonction pour activer le popup
                 popupAide.style.display = 'flex'; // Flex permet de mettre le popoup au centre de la page
             }
 
-            fermerPopupBtn.onclick = function() {
+            fermerPopupBtn.onclick = function() {// Fonction pour femer le popup à l'aide du boutton intégré
                 popupAide.style.display = 'none'; // Cacher le popup
             }
             
