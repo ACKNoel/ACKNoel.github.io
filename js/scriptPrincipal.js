@@ -76,16 +76,6 @@ function debuterJeu() {
     boiteAffiche.innerHTML = "<p>" + messageIndices + "</p>";
 }
 
-const invalide = document.getElementById("popupRetry");
-
-function ouvrirPopup() {
-    invalide.style.display = "flex";
-}
-
-fermerPopup.onclick = function() {
-    invalide.style.display = 'none'; // Cacher le popup
-}
-
 //fonction qui prend une réponse de l'utilisateur et vérifie s'il est correct
 //si la réponse est correct, on donne un montant de points selon le nombre d'indices utilisés
 //si la réponse est incorrect, on va à la prochaine indice
@@ -94,11 +84,8 @@ function correcteur() {
     let messageProchainJeu;
     let reponse = document.getElementById("txtReponse").value;
 
-    if (reponse.length <= 0){
-        ouvrirPopup();
-    }
     //si la réponse est correct, on ajoute au score et recommence le jeu
-    else if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
+    if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
         
         paysDevine++;
         
