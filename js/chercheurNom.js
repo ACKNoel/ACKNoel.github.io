@@ -13,7 +13,7 @@ fermerPopup.onclick = function() {
 //fonction qui cherche le nom d'utilisateur inscrit
 function chercheNomUtilisateur() {
     let entreeNom = document.getElementById("nomUtilisateur").value;
-    while (entreeNom.length == 0){
+    while (entreeNom.length <= 1){
         ouvrirPopup();
         location.href = "index.html";
         entreeNom = document.getElementById("nomUtilisateur").value;
