@@ -55,7 +55,7 @@ boiteScore.innerHTML = messageScore;
 
 //FONCTIONS:
 
-//Source: https://www.w3schools.com/js/js_random.asp
+//Source (Math.random): https://www.w3schools.com/js/js_random.asp
 //fonction qui choisit un pays selon l'index du tableau de pays
 //affiche aussi le premier indice et la boîte de réponse
 function debuterJeu() {
@@ -65,12 +65,11 @@ function debuterJeu() {
     //recommence les indices
     indice = 0;
 
-    //crée le text et un bouton qui sera affiché sur la page
-
+    //crée le text qui sera affiché sur la page
     messageIndices = "<b>Indice 1:</b> " + tblIndices[pays][indice];
     messageScore = "<p><b>SCORE:</b> " + score;
 
-    //affiche le text et un bouton sur la page
+    //affiche le text et la zone de réponse sur la page
     boiteScore.innerHTML = messageScore;
     boiteReponse.innerHTML = messageRepondre;
     boiteAffiche.innerHTML = "<p>" + messageIndices + "</p>";
@@ -87,6 +86,7 @@ function correcteur() {
     //si la réponse est correct, on ajoute au score et recommence le jeu
     if (reponse.toLowerCase() == tblPays[pays].toLowerCase()) {
         
+        //ajoute un au compteur des pays devinés
         paysDevine++;
         
         //ajoute au score dépendant sur le nombre d'indices utilisés
@@ -99,13 +99,16 @@ function correcteur() {
         messageScore = "<p><b>SCORE:</b> " + score;
         messageIndices = "Vous avez réussi!<br><br>Le pays était " + tblPays[pays] + ".";
         
+        //si le joueur a joué 5 rondes, finir le jeu
         if (paysDevine == 5) {
             messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
         }
+        //sinon, continuer
         else {
             messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
         }
 
+        //enlever le pays de la liste (pour ne pas avoir de répétition)
         tblPays.splice(pays, 1);
         tblIndices.splice(pays, 1);
 
@@ -115,18 +118,23 @@ function correcteur() {
     }
     //s'il n'y a plus d'indices, recommencer le jeu
     else if (indice == 4) {
+
+        //ajoute un au compteur des pays devinés
         paysDevine++;
 
         //crée le text et un bouton à afficher sur la page
         messageIndices = "Vous avez failli. <br><br>Le pays était " + tblPays[pays] + ".";
-        
+       
+        //si le joueur a joué 5 rondes, finir le jeu
         if (paysDevine == 5) {
             messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"location.href = 'scorefinal.html'\" value=\"Fin\"></input>";
         }
+        //sinon, continuer
         else {
             messageProchainJeu = "<input type=\"button\" id=\"btnSoumet\" onclick=\"debuterJeu()\" value=\"Prochain\"></input>";
         }
 
+        //enlever le pays de la liste (pour ne pas avoir de répétition)
         tblPays.splice(pays, 1);
         tblIndices.splice(pays, 1);
 
@@ -138,7 +146,7 @@ function correcteur() {
         //va au prochain indice
         indice++;
 
-        //ajoute le prochain indice au indices sur la page
+        //ajoute le prochain indice aux indices sur la page
         messageIndices = messageIndices + "<br><b>Indice " + (indice + 1) + ":</b> " + tblIndices[pays][indice];
 
         //ajoute "incorrect" au message si s'est le 2e indice (indice au index 1)
@@ -146,6 +154,7 @@ function correcteur() {
             messageIndices = "Incorrect.<br>" + messageIndices;
         }
 
+        //efface la réponse mit par le joueur
         boiteReponse.innerHTML = messageRepondre;
     }
 
