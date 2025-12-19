@@ -4,14 +4,14 @@
 
 let score = localStorage.getItem("score");
 
-if (score == null) {
+if ((score == undefined) || (score == "")) {
     score = 0;
 }
 
 let nom = localStorage.getItem("nomUtilisateur");
 
 //s'il n'y a pas de nom, nom devient Sans nom
-if (nom == null) {
+if ((nom == undefined) || (nom == "")) {
     nom = "Sans nom";
 }
 
