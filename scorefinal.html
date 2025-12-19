@@ -8,53 +8,52 @@
 		<title>Trouve le père Noël ?</title>
 		<link rel="icon" type="image/png" href="https://uploads.onecompiler.io/43yvfjg6b/4479w7tqk/Screenshot_2025-12-08_17.21.13-removebg-preview%20(1).png"> 
     <link rel="stylesheet" href="css/stylesheet.css">
+        <style>
+                body {
+                    /*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
+                    background-image: url('image/nuage.jpg');
+                    background-repeat: no-repeat; /* previent image de se répéter */
+                    background-size: cover; /* Change la taille de l'image pour qu'il couvre tout l'écran sans distortion*/
+                    background-position: center; /*Centre l'image dans l'arrière plan*/
+                }
+                /*Source: https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text*/
+                h1 {
+                    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+                }
+
+                p {
+                    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+                    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+                }
+                img {
+                    margin: auto;
+                    max-width:35%;
+                    margin-left: 33.1%;
+                    display: block; 
+                    height: 50%;
+
+                }
+
+                td {
+                padding: 2%;
+                }
+                table {
+                    width: 100%;
+                }
+
+        </style>
 	</head>
 	<!--source de l'image: https://www.vecteezy.com/vector-art/9432551-night-sky-with-full-moon-and-clouds-->
-	<body style = "background-image: url('https://uploads.onecompiler.io/43yvfjg6b/4479urpv9/nuage.jpg'); ">
-		<style>
-			body {
-				/*source: https://stackoverflow.com/questions/34273778/prevent-background-repeating*/
-				background-repeat: no-repeat; /* previent image de se répéter */
-				background-size: cover; /* Change la taille de l'image pour qu'il couvre tout l'écran sans distortion*/
-				background-position: center; /*Centre l'image dans l'arrière plan*/
-
-
-			}
-            /*Source: https://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text*/
-            h1 {
-                text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-            }
-
-            p {
-                text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-            }
-
-			img {
-				margin: auto;
-				max-width:35%;
-				margin-left: 33.1%;
-				top: 20%;
-                bottom: 50%;
-                display: block; 
-                height: 50%;
-
-    		}
-    	td {
-    	  padding: 2%;
-    	}
-
-		</style>
-		<centre>
+	<body>
+		<center>
             <div id="boiteNomUtilisateur" style ="margin-top: 5%">
 
             </div>
             <div id="boiteScoreFinal">
 
             </div>
-        </centre>
-        <table class="table">
+        <table>
         <tr>
             <td><img src="https://uploads.onecompiler.io/43yvfjg6b/4479urpv9/pereNoelPlage.jpg"/></td>
         </tr>
@@ -64,5 +63,7 @@
                     <input type="button" id="btnRecommence" onclick="location.href = 'index.html';" value="Recommencer" class="button2" style ="display:block"></td>
                 </form>
         </tr>
+        </table>
+        </center>
         <script src="js/scoreFinal.js"></script>
 	</body>
